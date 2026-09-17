@@ -1,0 +1,42 @@
+#send {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+#user-input {
+    width: 60%;
+    /* transform: translateX(-20px); */
+}
+
+#sendbutton {
+    width: 20px;
+}
+
+#ai-canva {
+    margin: 10px;
+    padding: 20px;
+    background-color: rgb(242, 240, 228);
+    border-radius: 10%;
+    text-align: left;
+}
+/* 
+#ai-response > :first-child {
+    margin-top: 0;
+}
+
+#ai-response > :last-child {
+    margin-bottom: 0;
+} */
+
+#ai-response pre {
+    overflow-x: auto;
+    padding: 12px;
+    background: #1f2937;
+    color: #f9fafb;
+    border-radius: 8px;
+}
+
+#ai-response code {
+    font-family: Consolas, monospace;
+}

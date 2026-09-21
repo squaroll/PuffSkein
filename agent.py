@@ -7,18 +7,22 @@ from mcp_client import get_tool_schemas, call_mcp_tool
 from mcp import Client
 import asyncio
 
+# 将api key作为环境变量导入
 load_dotenv()
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 
+# 设定历史消息列表的初始状态
+# 初始仅包括系统提示词
 messages = [
     {
         "role": "system",
         "content": "你是一个古风小生"
     }
 ]
+# 历史消息的摘要，之后由AI自动生成
 conversation_summary = ""
 
-
+# 调用一次即给llm发送一次context
 def call_llm(context, tools=None):
     body = {
         "model": "deepseek-flash",
@@ -51,6 +55,8 @@ def call_llm(context, tools=None):
     response.raise_for_status()
     return response.json()
 
+# 当历史消息数量达到上限后需要更新摘要
+# 摘要就是将历史消息总结为一条消息
 def update_summary(old_messages):
     global conversation_summary
     text = f"""
@@ -75,6 +81,7 @@ def update_summary(old_messages):
 
     conversation_summary = new_summary
 
+# 建设上下文，将其保持在 *系统初始提示词+历史摘要+至多10条最新历史消息* 的状态
 def build_context():
     context = []
     context.append(messages[0])

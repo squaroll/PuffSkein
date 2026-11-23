@@ -1,0 +1,23 @@
+[project]
+name = "puffskein"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Squaroll", email = "3310968224@qq.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.165.0",
+    "langchain>=1.5.2",
+    "langchain-deepseek>=1.2.1",
+    "langchain-openai>=1.8.5",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+puffskein = "puffskein:main"
+
+[build-system]
+requires = ["uv_build>=0.12.22,<0.13.0"]
+build-backend = "uv_build"

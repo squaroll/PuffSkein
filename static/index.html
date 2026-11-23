@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="Squaroll">
-        <meta name="description" content="PuffSkein，一个用于学习 Agent、Harness 与 MCP 的项目">
-        <title>PuffSkein Agent</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <center>
-            <h1>PuffSkein Agent</h1>
-            <hr>
-            <div id="ai-canva">
-                <div id="ai-response">有什么需要我帮忙的吗？</div>
-            </div>
-            <div id="send">
-                <textarea id="user-input" placeholder="请输入"></textarea>
-                <button id="send-button">发送</button>
-            </div>
-        </center>
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
-        <script src="app.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PuffSkein</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main>
+        <h1>PuffSkein</h1>
+
+        <div id="ai-response" aria-live="polite">
+            有什么需要我帮忙的吗？
+        </div>
+
+        <form id="chat-form">
+            <textarea
+                id="user-input"
+                aria-label="消息"
+                placeholder="请输入消息"
+                required
+            ></textarea>
+
+            <button id="send-button" type="submit">发送</button>
+        </form>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
 </html>

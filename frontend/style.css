@@ -27,6 +27,7 @@ main {
 }
 
 form {
+    display: flex;
     gap: 12px;
     margin-top: 16px;
 }
@@ -37,6 +38,8 @@ textarea {
     min-height: 50px;
     padding: 12px;
     font: inherit;
+    box-sizing: border-box;
+    resize: vertical;
 }
 
 button {
@@ -46,4 +49,17 @@ button {
 
 button:disabled {
     cursor: wait;
+}
+
+#clock {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    color: #666;
+}
+
+@media (max-width: 480px) {
+    form {
+        flex-direction: column;
+    }
 }

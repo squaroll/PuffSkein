@@ -23,6 +23,7 @@ __pycache__/
 htmlcov/
 
 # Build and packaging output
+node_modules/
 build/
 dist/
 *.egg-info/

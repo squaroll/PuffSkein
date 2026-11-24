@@ -10,20 +10,29 @@
     <main>
         <h1>PuffSkein</h1>
 
-        <div id="ai-response" aria-live="polite">
-            有什么需要我帮忙的吗？
+        <div id="chat">
+            <div id="ai-response" aria-live="polite">
+                有什么需要我帮忙的吗？
+            </div>
+
+            <form id="chat-form">
+                <textarea
+                    id="user-input"
+                    aria-label="消息"
+                    placeholder="请输入消息"
+                    required
+                ></textarea>
+
+                <button id="send-button" type="submit">发送</button>
+            </form>
+        </div>    
+        
+        <div id="sidebar">
+            <div id="clock">
+                <span id="date"></span>
+                <span id="time"></span>
+            </div>
         </div>
-
-        <form id="chat-form">
-            <textarea
-                id="user-input"
-                aria-label="消息"
-                placeholder="请输入消息"
-                required
-            ></textarea>
-
-            <button id="send-button" type="submit">发送</button>
-        </form>
     </main>
 
     <script src="/static/app.js"></script>
